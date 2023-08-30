@@ -1,0 +1,23 @@
+{
+    "name": "download-manager",
+    "version": "0.0.0",
+    "license": "MIT",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "rebuild": "electron-rebuild -f -w electron",
+        "package": "electron-packager . download-manager --platform=win32 --arch=x64 --version=0.25.0 --overwrite",
+        "package-all": "electron-packager . download-manager --all --version=0.25.0 --overwrite",
+        "package-win": "electron-packager . download-manager --platform=win32 --arch=x64 --version=0.25.0 --overwrite",
+        "package-linux": "electron-packager . download-manager --platform=linux --arch=x64 --version=0.25.0 --overwrite",
+        "package-mac": "electron-packager . download-manager --platform=darwin --arch=x64 --version=0.25.0 --overwrite"
+    },
+    "devDependencies": {
+        "electron": "^26.1.0"
+    },
+    "dependencies": {
+        "electron-context-menu": "^3.6.1",
+        "electron-packager": "^17.1.2",
+        "electron-rebuild": "^3.2.9"
+    }
+}
