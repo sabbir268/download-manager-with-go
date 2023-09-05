@@ -6,5 +6,5 @@ document.getElementById('download').addEventListener('click', () => {
 })
 
 ipcRenderer.on('progress', (event, progress) => {
-    document.getElementById('progress').value = progress
+    document.getElementById('progress').innerText = progress
 })

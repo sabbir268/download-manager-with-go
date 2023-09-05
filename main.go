@@ -236,11 +236,14 @@ func main() {
 			elapsed := time.Since(startTime)
 			downloadSpeed := float64(totalDownloaded) / elapsed.Seconds()
 			percent := float64(totalDownloaded) / float64(d.Size) * 100
-			remainingTime := time.Duration((float64(d.Size-totalDownloaded) / downloadSpeed))
+			remainingTime := time.Duration((float64(d.Size) - float64(totalDownloaded)) / downloadSpeed)
 
 			fmt.Printf("\rDownloaded: %s/%s (%.2f%%) | Speed: %s/s | Elapsed: %s | Remaining: %s",
 				formatBytes(totalDownloaded), formatBytes(d.Size), percent, formatBytes(int64(downloadSpeed)),
 				formatDuration(elapsed), formatDuration(remainingTime))
+			// fmt.Printf("\rDownloaded: %s/%s (%.2f%%) | Speed: %s/s | Remaining: %s",
+			// 	formatBytes(totalDownloaded), formatBytes(d.Size), percent, formatBytes(int64(downloadSpeed)),
+			// 	remainingTime)
 		}
 	}()
 

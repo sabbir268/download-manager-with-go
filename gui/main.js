@@ -43,7 +43,7 @@ ipcMain.on('download', (event, url) => {
     const child = exec(command)
 
     child.stdout.on('data', (data) => {
-        const progress = parseFloat(data)
+        const progress = data
         event.sender.send('progress', progress)
     })
 
